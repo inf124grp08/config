@@ -1,4 +1,39 @@
-colorscheme desert
+call plug#begin('~/.vim/plugged')
+Plug 'scrooloose/syntastic'
+Plug 'scrooloose/nerdcommenter'
+
+Plug 'MarcWeber/vim-addon-mw-utils' "snipmate dep
+Plug 'tomtom/tlib_vim' "snipmate dep
+Plug 'garbas/vim-snipmate'
+Plug 'mileszs/ack.vim'
+Plug 'surround.vim'
+
+Plug 'tpope/vim-eunuch'
+
+Plug 'scrooloose/nerdtree'
+
+Plug 'ervandew/supertab'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-vinegar'
+Plug 'honza/vim-snippets'
+
+
+" vim-javascript is a dependency of vim-jsx, so load first
+Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'mxw/vim-jsx', { 'for': 'javascript.jsx' }
+Plug 'heavenshell/vim-jsdoc', { 'for': ['javascript', 'javascript.jsx'] }
+
+Plug 'davb5/wombat256dave'
+
+call plug#end()
+
+colorscheme wombat256dave
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2 expandtab
+"" vim version too old for this? or need VimEnter function or something?
+" autocmd VimEnter * set breakindent | set breakindentopt=shift:2
 
 "-------------------------------------------------------------------------------
 "  Mappings
@@ -72,4 +107,3 @@ inoremap <C-v> <f10><C-r>+<f10>
 inoremap <A-v> <f10><C-r>+<f10>
 " select all
 vnoremap a <esc> gg V G>
-
