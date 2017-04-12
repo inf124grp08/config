@@ -1,0 +1,28 @@
+[core]
+  editor = vim
+  excludesfile = ~/config/gitignore_global
+[alias]
+  # git lol - displays a nice looking tree of commits, it looks much nice than just git log
+  lol = log --oneline --graph --decorate
+  # git cam "<commit message>" - Adds all untracked files in your current directory and then
+  # commits them with what ever commit message you put at the end
+  commitf = commit --author="Keyvan <kfatehi@uci.edu>"
+  cams = !git add -A && git commit --author="Name ksanclem@uci.edu"  -m
+  # git co <branch_name>  - checks out a branch but takes way less typing
+  co = checkout
+  # git rekt - takes you back to your last commit and deletes all changes that have been made
+  # to your current repository since your last commit
+  rekt = "!f(){ git reset HEAD --hard && git clean -fd; };f"
+  # git uncommit - does exactly what it's name says it does it removes your last commit but
+  # it doesn't remove any of your changes. mostly used for fixing commit messages
+  uncommit = reset HEAD^
+  # git clean - replaces the normal git clean with a better verion, you almost always have to
+  # use force when cleaning, and interavtice mode make it so that you do accidentally clean
+  # somehting important
+  clean = clean -fi
+  # git ignore - unstages and removes paths from your index, I use it mainly for my config file
+  # repo because I only track selective files in my home directory, and my .gitignore file
+  # ignores all files by default. basically if you want to stop tracking a file, but don't want
+  # to delete the file itself, use ignore
+  ignore = rm -r --cached
+
