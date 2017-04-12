@@ -4,12 +4,8 @@
 [alias]
   # git lol - displays a nice looking tree of commits, it looks much nice than just git log
   lol = log --oneline --graph --decorate
-  # git cam "<commit message>" - Adds all untracked files in your current directory and then
-  # commits them with what ever commit message you put at the end
-  commitf = commit --author="Keyvan <kfatehi@uci.edu>"
-  cams = !git add -A && git commit --author="Name ksanclem@uci.edu"  -m
-  # git co <branch_name>  - checks out a branch but takes way less typing
   co = checkout
+  cam = !git add -A && git commit
   # git rekt - takes you back to your last commit and deletes all changes that have been made
   # to your current repository since your last commit
   rekt = "!f(){ git reset HEAD --hard && git clean -fd; };f"
