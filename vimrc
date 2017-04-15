@@ -107,3 +107,35 @@ inoremap <C-v> <f10><C-r>+<f10>
 inoremap <A-v> <f10><C-r>+<f10>
 " select all
 vnoremap a <esc> gg V G>
+
+" Fix weird arrows in some terminals
+let g:NERDTreeDirArrows=0
+nmap <C-D> :NERDTreeToggle<CR>
+
+
+" Disable swap files, they suck
+set nobackup      
+set nowritebackup 
+set noswapfile   
+
+" use ack
+set grepprg=ack
+
+
+" Play nice in tmux
+if &term =~ '^screen'
+    " tmux will send xterm-style keys when xterm-keys is on
+    execute "set <xUp>=\e[1;*A"
+    execute "set <xDown>=\e[1;*B"
+    execute "set <xRight>=\e[1;*C"
+    execute "set <xLeft>=\e[1;*D"
+endif
+
+" Navigate window splits easily
+nnoremap <silent> <C-Right> <c-w>l
+nnoremap <silent> <C-Left> <c-w>h
+nnoremap <silent> <C-Up> <c-w>k
+nnoremap <silent> <C-Down> <c-w>j
+
+
+set number
